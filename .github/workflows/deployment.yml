@@ -48,8 +48,8 @@ jobs:
       - name: Azure Kubernetes Set Context
         uses: azure/aks-set-context@v3
         with:
-          resource-group: ${{ secrets.AZURE_RESOURCE_GROUP }}
-          cluster-name: ${{ secrets.AZURE_CLUSTER_NAME }}
+          resource-group: ${{ vars.AZURE_RESOURCE_GROUP }}
+          cluster-name: ${{ vars.AZURE_CLUSTER_NAME }}
 
       - name: Dry run helm chart
         run: |
