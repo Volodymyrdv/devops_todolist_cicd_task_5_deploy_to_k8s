@@ -118,7 +118,7 @@ jobs:
           path: ./*.tgz
 
   deploy-helm-dev:
-    name: Deploy Helm
+    name: Deploy Helm Development
     uses: ./.github/workflows/deployment.yml
     needs: ['docker-ci', 'helm-ci']
     secrets: inherit
