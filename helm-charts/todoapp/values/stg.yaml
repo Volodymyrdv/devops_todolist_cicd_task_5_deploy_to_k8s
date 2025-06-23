@@ -1,4 +1,5 @@
 mysql:
+  namespace: mysql-staging
   secrets:
     MYSQL_ROOT_PASSWORD: placeholder
     MYSQL_USER: placeholder
