@@ -53,7 +53,7 @@ jobs:
 
       - name: Dry run helm chart
         run: |
-          helm upgrade --install --debug --dry-run ${{ inputs.helm-release }} ./kube2py-*.tgz \
+          helm upgrade --install --debug --dry-run ${{ inputs.helm-release }} ./todoapp-*.tgz \
             -f ${{ inputs.helm-path }} \
             --set todoapp.secrets.SECRET_KEY=${{secrets.SECRET_KEY}} \
             --set todoapp.secrets.DB_NAME=${{secrets.DB_NAME}} \
@@ -67,7 +67,7 @@ jobs:
 
       - name: Deploy helm chart
         run: |
-          helm upgrade --install --atomic --wait --timeout 3600s --debug ${{ inputs.helm-release }} ./kube2py-*.tgz \
+          helm upgrade --install --atomic --wait --timeout 3600s --debug ${{ inputs.helm-release }} ./todoapp-*.tgz \
             -f ${{ inputs.helm-path }} \
             --set todoapp.secrets.SECRET_KEY=${{secrets.SECRET_KEY}} \
             --set todoapp.secrets.DB_NAME=${{secrets.DB_NAME}} \
